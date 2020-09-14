@@ -586,13 +586,41 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 116,
+   "execution_count": 185,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "school_name            type    \n",
+       "Bailey High School     District    4976\n",
+       "Cabrera High School    Charter     1858\n",
+       "Figueroa High School   District    2949\n",
+       "Ford High School       District    2739\n",
+       "Griffin High School    Charter     1468\n",
+       "Hernandez High School  District    4635\n",
+       "Holden High School     Charter      427\n",
+       "Huang High School      District    2917\n",
+       "Johnson High School    District    4761\n",
+       "Pena High School       Charter      962\n",
+       "Rodriguez High School  District    3999\n",
+       "Shelton High School    Charter     1761\n",
+       "Thomas High School     Charter     1635\n",
+       "Wilson High School     Charter     2283\n",
+       "Wright High School     Charter     1800\n",
+       "Name: type, dtype: int64"
+      ]
+     },
+     "execution_count": 185,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
     "#Finding the whether it is a charter or District school\n",
     "school_name_df = school_data_complete_df.groupby('school_name')\n",
-    "type_of_school_df = pd.DataFrame(school_name_df['type'].value_counts())"
+    "type_of_school_df = school_name_df['type'].value_counts()\n",
+    "type_of_school_df"
    ]
   },
   {
@@ -603,85 +631,83 @@
    "source": [
     "#How many students attend each school \n",
     "school_name_df = school_data_complete_df.groupby('school_name')\n",
-    "students_per_df = school_name_df['student_name'].count()\n",
-    "students_per_clean= pd.DataFrame(students_per_df)"
+    "students_per_df = school_name_df['student_name'].count()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 148,
+   "execution_count": 179,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the total budget per school\n",
     "school_name_df = school_data_complete_df.groupby('school_name')\n",
-    "budget_per_school = pd.DataFrame(school_name_df['budget'].sum())"
+    "budget_per_school = school_name_df['budget'].sum()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 149,
+   "execution_count": 180,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the average math score per school\n",
     "school_name_df = school_data_complete_df.groupby('school_name')\n",
-    "math_per_school = pd.DataFrame(school_name_df['math_score'].mean())"
+    "math_per_school = school_name_df['math_score'].mean()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 155,
+   "execution_count": 181,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the average reading score per school\n",
     "school_name_df = school_data_complete_df.groupby('school_name')\n",
-    "reading_per_school = pd.DataFrame(school_name_df['reading_score'].mean())"
+    "reading_per_school = school_name_df['reading_score'].mean()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 175,
+   "execution_count": 182,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the total number of students per school that passed Math\n",
     "school_name_df = passing_math_df.groupby('school_name')\n",
     "math_per_df = school_name_df['math_score'].count()\n",
-    "percentage_math_per_df = math_per_df/students_per_df*100\n",
-    "percentage_math_per_df = pd.DataFrame(percentage_math_per_df)"
+    "percentage_math_per_df = math_per_df/students_per_df*100"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 176,
+   "execution_count": 183,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the total number of students per school that passed Reading \n",
     "school_name_df = passing_reading_df.groupby('school_name')\n",
     "reading_per_df = school_name_df['reading_score'].count()\n",
-    "percentage_reading_per_df = reading_per_df/students_per_df*100\n",
-    "percentage_reading_per_df = pd.DataFrame(percentage_reading_per_df)"
+    "percentage_reading_per_df = reading_per_df/students_per_df*100"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 177,
+   "execution_count": 184,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the total number of students per school that passed Reading and Math\n",
     "school_name_df = passing_both_df.groupby('school_name')\n",
     "both_per_df = school_name_df['reading_score'].count()\n",
-    "percentage_both_per_df = both_per_df/students_per_df*100\n",
-    "percentage_both_per_df = pd.DataFrame(percentage_both_per_df)"
+    "percentage_both_per_df = both_per_df/students_per_df*100"
    ]
   },
   {
-   "cell_type": "markdown",
+   "cell_type": "code",
+   "execution_count": null,
    "metadata": {},
+   "outputs": [],
    "source": []
   },
   {
