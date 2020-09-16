@@ -17,7 +17,7 @@
     "# Dependencies and Setup\n",
     "import pandas as pd\n",
     "\n",
-    "# File to Load (Remember to Change These)\n",
+    "# File to Load \n",
     "school_data_to_load = \"Resources/schools_complete.csv\"\n",
     "student_data_to_load = \"Resources/students_complete.csv\"\n",
     "\n",
@@ -2272,18 +2272,23 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#1. After careful consideration I noticed that Charter Schools perform much better than District Schools in every \n",
+    "topic.The top schools that have the highest Overall Passing are all charter school in comparison to the lowest \n",
+    "Overall Passing where the five lowest schools were all District Schools. \n",
+    "#2. There does not seem to be a significant difference in test scores among student population, spending per student,\n",
+    "or grade distribution among grade level. That would lead me to believe that the grade distribution stems from school\n",
+    "type rather than class size or class spending"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
    "outputs": [],
-   "source": [
-    "## \n",
-    "1. After careful consideration I noticed that Charter Schools perform much better than District Schools in every topic.\n",
-    "The top schools that have the highest Overall Passing are all charter school in comparison to the lowest Overall\n",
-    "Passing where the five lowest schools were all District Schools. \n",
-    "2. There does not seem to be a significant difference in test scores among student population, spending per student, or . \n",
-    "That would lead me to believe that the grade distribution stems from school type rather than class size or class spending"
-   ]
+   "source": []
   }
  ],
  "metadata": {
