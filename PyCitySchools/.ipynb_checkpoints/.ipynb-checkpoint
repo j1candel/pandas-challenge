@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 283,
+   "execution_count": 585,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -31,7 +31,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 284,
+   "execution_count": 586,
    "metadata": {},
    "outputs": [
     {
@@ -258,7 +258,7 @@
        "[39170 rows x 11 columns]"
       ]
      },
-     "execution_count": 284,
+     "execution_count": 586,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -296,193 +296,103 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 285,
+   "execution_count": 635,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "15"
-      ]
-     },
-     "execution_count": 285,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#Finding the length of total number of schools \n",
     "total_schools_df=pd.unique(school_data_complete_df['school_name'])\n",
     "total_schools_df\n",
-    "total_schools_number_df=len(total_schools_df)\n",
-    "total_schools_number_df"
+    "total_schools_number_df=len(total_schools_df)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 286,
+   "execution_count": 636,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "39170"
-      ]
-     },
-     "execution_count": 286,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#Finding the total number of students\n",
-    "total_students_number_df=len(school_data_complete_df)\n",
-    "total_students_number_df"
+    "total_students_number_df=len(school_data_complete_df)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 287,
+   "execution_count": 637,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "24649428"
-      ]
-     },
-     "execution_count": 287,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#calculate the total budget \n",
     "#Finding the total budget per school per school\n",
     "school_budget = school_data_complete_df['budget'].unique()\n",
-    "school_budget_df = school_budget.sum()\n",
-    "school_budget_df"
+    "school_budget_df = school_budget.sum()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 288,
+   "execution_count": 638,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "78.98537145774827"
-      ]
-     },
-     "execution_count": 288,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#calculate average math score \n",
-    "average_math_df=school_data_complete_df['math_score'].mean()\n",
-    "average_math_df"
+    "average_math_df=school_data_complete_df['math_score'].mean()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 289,
+   "execution_count": 639,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "81.87784018381414"
-      ]
-     },
-     "execution_count": 289,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#calculate average reading score \n",
-    "average_reading_df=school_data_complete_df['reading_score'].mean()\n",
-    "average_reading_df"
+    "average_reading_df=school_data_complete_df['reading_score'].mean()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 290,
+   "execution_count": 640,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "74.9808526933878"
-      ]
-     },
-     "execution_count": 290,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#calculate the amount of students passing math\n",
     "passing_math_df=school_data_complete_df.loc[(school_data_complete_df['math_score']>=70)]\n",
     "passing_number_math_df=len(passing_math_df)\n",
-    "passing_math_percentage_df=passing_number_math_df/total_students_number_df*100\n",
-    "passing_math_percentage_df"
+    "\n",
+    "#Divide the number of passing math students by total students \n",
+    "passing_math_percentage_df=passing_number_math_df/total_students_number_df*100"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 291,
+   "execution_count": 641,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "85.80546336482001"
-      ]
-     },
-     "execution_count": 291,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#calculate the amount of students passing reading \n",
     "passing_reading_df=school_data_complete_df.loc[(school_data_complete_df['reading_score']>=70)]\n",
     "passing_number_reading_df=len(passing_reading_df)\n",
-    "passing_reading_percentage_df=passing_number_reading_df/total_students_number_df*100\n",
-    "passing_reading_percentage_df"
+    "\n",
+    "#Divide the number of passing reading students by total students \n",
+    "passing_reading_percentage_df=passing_number_reading_df/total_students_number_df*100"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 292,
+   "execution_count": 642,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "65.17232575950983"
-      ]
-     },
-     "execution_count": 292,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#calculate the amount of students passing reading and math \n",
     "passing_both_df=school_data_complete_df.loc[(school_data_complete_df['math_score']>=70)&(school_data_complete_df['reading_score']>=70)]\n",
     "passing_number_both_df=len(passing_both_df)\n",
-    "passing_both_percentage_df=passing_number_both_df/total_students_number_df*100\n",
-    "passing_both_percentage_df"
+    "\n",
+    "#Divide the number of passing for both math and reading by total students \n",
+    "passing_both_percentage_df=passing_number_both_df/total_students_number_df*100"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 573,
+   "execution_count": 643,
    "metadata": {},
    "outputs": [
     {
@@ -543,7 +453,7 @@
        "0          65.172326  "
       ]
      },
-     "execution_count": 573,
+     "execution_count": 643,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -558,10 +468,14 @@
     "                        '% Passing Math':[passing_math_percentage_df],\n",
     "                        '% Passing Reading':[passing_reading_percentage_df],\n",
     "                        '% Overall Passing':[passing_both_percentage_df]})\n",
+    "\n",
+    "#Eliminates the index\n",
     "summary_df.index.name = None \n",
-    "#df [ \"NAME OF COLUMN\"] = df [ \"NAME OF COLUMN\"].map(\"${:,.2f}\".format)\n",
+    "\n",
+    "#Changing to the correct format\n",
     "summary_df['Total Students']=summary_df['Total Students'].map(\"{:,.2f}\".format)\n",
     "summary_df['Total Budget']=summary_df['Total Budget'].map(\"${:,.2f}\".format)\n",
+    "\n",
     "summary_df"
    ]
   },
@@ -593,21 +507,25 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 409,
+   "execution_count": 596,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Finding the whether it is a charter or District school\n",
     "school_name_df = school_data_complete_df.groupby('school_name') \n",
     "school_type_df = school_name_df['type'].unique()\n",
+    "\n",
+    "#Making a dataframe\n",
     "school_type_df = pd.DataFrame(school_type_df)\n",
+    "\n",
+    "#Chaning the format to a string to eliminate the brackets\n",
     "school_type_df = school_type_df['type'].str[0]\n",
     "school_type_df = pd.DataFrame(school_type_df)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 339,
+   "execution_count": 597,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -619,7 +537,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 340,
+   "execution_count": 598,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -632,7 +550,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 341,
+   "execution_count": 599,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -642,7 +560,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 342,
+   "execution_count": 600,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -653,7 +571,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 343,
+   "execution_count": 601,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -664,7 +582,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 344,
+   "execution_count": 602,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -676,7 +594,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 345,
+   "execution_count": 603,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -688,7 +606,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 346,
+   "execution_count": 604,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -700,17 +618,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 347,
+   "execution_count": 605,
    "metadata": {},
    "outputs": [],
    "source": [
+    "#Merging the percentages together into one table \n",
     "percentage_sum_df= pd.merge(percentage_math_per_df, percentage_reading_per_df, on=[\"school_name\"])\n",
     "percentage_sum_df= pd.merge(percentage_sum_df, percentage_both_per_df, on=[\"school_name\"])"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 578,
+   "execution_count": 606,
    "metadata": {},
    "outputs": [
     {
@@ -1000,23 +919,32 @@
        "Wright High School             96.611111          90.333333  "
       ]
      },
-     "execution_count": 578,
+     "execution_count": 606,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
+    "#Merging into one summarized table \n",
     "table_sum_df=pd.merge(school_type_df,students_per_clean_df, on=['school_name'])\n",
     "table_sum_df=pd.merge(table_sum_df, budget_per_school_df, on=['school_name'])\n",
     "table_sum_df=pd.merge(table_sum_df, budget_per_student_df, on=['school_name'])\n",
+    "\n",
+    "#Renaming fields to corresponding name and merging into one table \n",
     "table_sum_df=table_sum_df.rename(columns={'type':'School Type','student_name':'Total Students','0_x':'Total School Budget','0_y':'Per Student Budget'})\n",
     "table_sum_df=pd.merge(table_sum_df, math_per_school_df , on=['school_name'])\n",
     "table_sum_df=pd.merge(table_sum_df, reading_per_school_df , on=['school_name'])\n",
     "table_sum_df=pd.merge(table_sum_df, percentage_sum_df , on=['school_name'])\n",
+    "\n",
+    "#Renaming fields to corresponding name and merging into one table \n",
     "table_sum_df=table_sum_df.rename(columns={'math_score':'Average Math Score','reading_score':'Average Reading Score','0_x':'% Passing Math','0_y':'% Passing Reading'})\n",
     "table_sum_df = pd.merge(table_sum_df, percentage_both_per_df, on=['school_name'])\n",
     "table_sum_df=table_sum_df.rename(columns={'0_x':'% Overall Passing'})\n",
+    "\n",
+    "#Deleting an unwanted column\n",
     "del table_sum_df['0_y']\n",
+    "\n",
+    "#Rename and eliminate the index\n",
     "with_out_index_df = table_sum_df.rename(columns={'Average Reading Score':'Reading Score Average'})\n",
     "with_out_index_df.index.name = None \n",
     "\n",
@@ -1035,7 +963,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 525,
+   "execution_count": 607,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1046,104 +974,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 526,
+   "execution_count": 644,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>School Type</th>\n",
-       "      <th>Total Students</th>\n",
-       "      <th>Total School Budget</th>\n",
-       "      <th>Per Student Budget</th>\n",
-       "      <th>Average Math Score</th>\n",
-       "      <th>Average Reading Score</th>\n",
-       "      <th>% Passing Math</th>\n",
-       "      <th>% Passing Reading</th>\n",
-       "      <th>% Overall Passing</th>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>school_name</th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "      <th></th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>Thomas High School</th>\n",
-       "      <td>Charter</td>\n",
-       "      <td>1635</td>\n",
-       "      <td>1043130.0</td>\n",
-       "      <td>638.0</td>\n",
-       "      <td>83.418349</td>\n",
-       "      <td>83.84893</td>\n",
-       "      <td>93.272171</td>\n",
-       "      <td>97.308869</td>\n",
-       "      <td>90.948012</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "                   School Type  Total Students  Total School Budget  \\\n",
-       "school_name                                                           \n",
-       "Thomas High School     Charter            1635            1043130.0   \n",
-       "\n",
-       "                    Per Student Budget  Average Math Score  \\\n",
-       "school_name                                                  \n",
-       "Thomas High School               638.0           83.418349   \n",
-       "\n",
-       "                    Average Reading Score  % Passing Math  % Passing Reading  \\\n",
-       "school_name                                                                    \n",
-       "Thomas High School               83.84893       93.272171          97.308869   \n",
-       "\n",
-       "                    % Overall Passing  \n",
-       "school_name                            \n",
-       "Thomas High School          90.948012  "
-      ]
-     },
-     "execution_count": 526,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "#Deleting the last max and finding the new max\n",
     "minus_one_df = table_sum_df.drop('Cabrera High School', axis=0)\n",
     "top_2 = minus_one_df['% Overall Passing'].max() \n",
-    "top_2_df = minus_one_df.loc[(table_sum_df['% Overall Passing']==top_2)]\n",
-    "top_2_df"
+    "top_2_df = minus_one_df.loc[(table_sum_df['% Overall Passing']==top_2)]"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 527,
+   "execution_count": 609,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1162,7 +1005,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 528,
+   "execution_count": 610,
    "metadata": {
     "scrolled": true
    },
@@ -1176,7 +1019,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 529,
+   "execution_count": 611,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1188,7 +1031,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 581,
+   "execution_count": 612,
    "metadata": {},
    "outputs": [
     {
@@ -1318,7 +1161,7 @@
        "Pena High School             90.540541  "
       ]
      },
-     "execution_count": 581,
+     "execution_count": 612,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1329,6 +1172,8 @@
     "top_5_df = pd.merge(top_5_df, top_3_df, on=['school_name','School Type','Total Students','Total School Budget','Per Student Budget', 'Average Math Score','Average Reading Score','% Passing Math','% Passing Reading','% Overall Passing'], how='outer')\n",
     "top_5_df = pd.merge(top_5_df, top_4_df, on=['school_name','School Type','Total Students','Total Students','Total School Budget','Per Student Budget', 'Average Math Score','Average Reading Score','% Passing Math','% Passing Reading','% Overall Passing'], how='outer')\n",
     "top_5_df = pd.merge(top_5_df, toped_5_df, on=['school_name','School Type','Total Students','Total School Budget','Per Student Budget', 'Average Math Score','Average Reading Score','% Passing Math','% Passing Reading','% Overall Passing'], how='outer')\n",
+    "\n",
+    "#Eliminating Index and Formating Columns\n",
     "top_5_df.index.name = None \n",
     "top_5_df['Total School Budget']=top_5_df['Total School Budget'].map(\"${:,.2f}\".format)\n",
     "top_5_df['Per Student Budget']=top_5_df['Per Student Budget'].map(\"${:,.2f}\".format)\n",
@@ -1351,7 +1196,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 531,
+   "execution_count": 613,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1362,7 +1207,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 532,
+   "execution_count": 614,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1374,7 +1219,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 533,
+   "execution_count": 615,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1386,7 +1231,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 534,
+   "execution_count": 616,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1398,7 +1243,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 535,
+   "execution_count": 617,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1410,7 +1255,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 582,
+   "execution_count": 618,
    "metadata": {},
    "outputs": [
     {
@@ -1540,7 +1385,7 @@
        "Johnson High School            81.222432          53.539172  "
       ]
      },
-     "execution_count": 582,
+     "execution_count": 618,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1551,6 +1396,8 @@
     "wrost_5_df = pd.merge(wrost_5_df, min_3_df, on=['school_name','School Type','Total Students','Total School Budget','Per Student Budget', 'Average Math Score','Average Reading Score','% Passing Math','% Passing Reading','% Overall Passing'], how='outer')\n",
     "wrost_5_df = pd.merge(wrost_5_df, min_4_df, on=['school_name','School Type','Total Students','Total School Budget','Per Student Budget', 'Average Math Score','Average Reading Score','% Passing Math','% Passing Reading','% Overall Passing'], how='outer')\n",
     "wrost_5_df = pd.merge(wrost_5_df, min_5_df, on=['school_name','School Type','Total Students','Total School Budget','Per Student Budget', 'Average Math Score','Average Reading Score','% Passing Math','% Passing Reading','% Overall Passing'], how='outer')\n",
+    "\n",
+    "#Eliminating Index and Formating Columns\n",
     "wrost_5_df.index.name = None \n",
     "wrost_5_df['Total School Budget']=wrost_5_df['Total School Budget'].map(\"${:,.2f}\".format)\n",
     "wrost_5_df['Per Student Budget']=wrost_5_df['Per Student Budget'].map(\"${:,.2f}\".format)\n",
@@ -1583,7 +1430,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 583,
+   "execution_count": 619,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1595,7 +1442,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 584,
+   "execution_count": 620,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1607,7 +1454,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 539,
+   "execution_count": 621,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1619,7 +1466,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 540,
+   "execution_count": 622,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1631,7 +1478,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 541,
+   "execution_count": 623,
    "metadata": {},
    "outputs": [
     {
@@ -1790,7 +1637,7 @@
        "Wright High School     83.264706  84.010288  83.836782  83.644986"
       ]
      },
-     "execution_count": 541,
+     "execution_count": 623,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1802,6 +1649,8 @@
     "math_per_grade_df = pd.merge(math_per_grade_df, math_per_11_df, on=['school_name'])\n",
     "math_per_grade_df = pd.merge(math_per_grade_df, math_per_12_df, on=['school_name'])\n",
     "math_per_grade_df = math_per_grade_df.rename(columns={'math_score_x':'11th','math_score_y':'12th'})\n",
+    "\n",
+    "#Eliminating index\n",
     "math_per_grade_df.index.name = None \n",
     "math_per_grade_df"
    ]
@@ -1822,7 +1671,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 542,
+   "execution_count": 624,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1834,7 +1683,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 543,
+   "execution_count": 625,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1846,7 +1695,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 544,
+   "execution_count": 626,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1858,7 +1707,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 545,
+   "execution_count": 627,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1870,7 +1719,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 546,
+   "execution_count": 628,
    "metadata": {},
    "outputs": [
     {
@@ -2029,7 +1878,7 @@
        "Wright High School     83.833333  83.812757  84.156322  84.073171"
       ]
      },
-     "execution_count": 546,
+     "execution_count": 628,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2041,6 +1890,8 @@
     "reading_per_grade_df = pd.merge(reading_per_grade_df, reading_per_11_df, on=['school_name'])\n",
     "reading_per_grade_df = pd.merge(reading_per_grade_df, reading_per_12_df, on=['school_name'])\n",
     "reading_per_grade_df = reading_per_grade_df.rename(columns={'reading_score_x':'11th','reading_score_y':'12th'})\n",
+    "\n",
+    "#Eliminating Index\n",
     "reading_per_grade_df.index.name = None \n",
     "reading_per_grade_df"
    ]
@@ -2066,7 +1917,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 547,
+   "execution_count": 645,
    "metadata": {},
    "outputs": [
     {
@@ -2090,18 +1941,24 @@
        "  <thead>\n",
        "    <tr style=\"text-align: right;\">\n",
        "      <th></th>\n",
-       "      <th>School Type</th>\n",
        "      <th>Average Math Score</th>\n",
        "      <th>Average Reading Score</th>\n",
        "      <th>% Passing Math</th>\n",
        "      <th>% Passing Reading</th>\n",
        "      <th>% Overall Passing</th>\n",
        "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Spending Ranges (Per Student)</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
        "  </thead>\n",
        "  <tbody>\n",
        "    <tr>\n",
        "      <th>&lt;$584</th>\n",
-       "      <td>Charter</td>\n",
        "      <td>83.803279</td>\n",
        "      <td>83.989488</td>\n",
        "      <td>94.133477</td>\n",
@@ -2110,7 +1967,6 @@
        "    </tr>\n",
        "    <tr>\n",
        "      <th>$585-629</th>\n",
-       "      <td>District</td>\n",
        "      <td>83.839917</td>\n",
        "      <td>84.044699</td>\n",
        "      <td>94.594595</td>\n",
@@ -2119,7 +1975,6 @@
        "    </tr>\n",
        "    <tr>\n",
        "      <th>$630-644</th>\n",
-       "      <td>District</td>\n",
        "      <td>83.418349</td>\n",
        "      <td>83.848930</td>\n",
        "      <td>93.272171</td>\n",
@@ -2128,7 +1983,6 @@
        "    </tr>\n",
        "    <tr>\n",
        "      <th>$645-675</th>\n",
-       "      <td>District</td>\n",
        "      <td>77.289752</td>\n",
        "      <td>81.182722</td>\n",
        "      <td>66.752967</td>\n",
@@ -2140,20 +1994,29 @@
        "</div>"
       ],
       "text/plain": [
-       "         School Type  Average Math Score  Average Reading Score  \\\n",
-       "<$584        Charter           83.803279              83.989488   \n",
-       "$585-629    District           83.839917              84.044699   \n",
-       "$630-644    District           83.418349              83.848930   \n",
-       "$645-675    District           77.289752              81.182722   \n",
+       "                               Average Math Score  Average Reading Score  \\\n",
+       "Spending Ranges (Per Student)                                              \n",
+       "<$584                                   83.803279              83.989488   \n",
+       "$585-629                                83.839917              84.044699   \n",
+       "$630-644                                83.418349              83.848930   \n",
+       "$645-675                                77.289752              81.182722   \n",
        "\n",
-       "          % Passing Math  % Passing Reading  % Overall Passing  \n",
-       "<$584          94.133477          97.039828          91.334769  \n",
-       "$585-629       94.594595          97.138965          90.599455  \n",
-       "$630-644       93.272171          97.308869          90.948012  \n",
-       "$645-675       66.752967          81.316421          53.539172  "
+       "                               % Passing Math  % Passing Reading  \\\n",
+       "Spending Ranges (Per Student)                                      \n",
+       "<$584                               94.133477          97.039828   \n",
+       "$585-629                            94.594595          97.138965   \n",
+       "$630-644                            93.272171          97.308869   \n",
+       "$645-675                            66.752967          81.316421   \n",
+       "\n",
+       "                               % Overall Passing  \n",
+       "Spending Ranges (Per Student)                     \n",
+       "<$584                                  91.334769  \n",
+       "$585-629                               90.599455  \n",
+       "$630-644                               90.948012  \n",
+       "$645-675                               53.539172  "
       ]
      },
-     "execution_count": 547,
+     "execution_count": 645,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2164,10 +2027,13 @@
     "bins = [0, 584, 629, 644, 675]\n",
     "group_names = ['<$584','$585-629','$630-644','$645-675']\n",
     "table_sum_df['Spending Ranges (Per Student)']=pd.cut(table_sum_df['Per Student Budget'], bins, labels=group_names)\n",
+    "\n",
+    "#Grouping by Spending per Students \n",
     "school_spending_df = table_sum_df.groupby('Spending Ranges (Per Student)')\n",
     "school_spending_df = school_spending_df.max()\n",
-    "school_spending_df = school_spending_df.drop(columns=['Total Students', 'Total School Budget','Per Student Budget'])\n",
-    "school_spending_df.index.name = None \n",
+    "\n",
+    "#Dropping unwanted columns \n",
+    "school_spending_df = school_spending_df.drop(columns=['School Type','Total Students', 'Total School Budget','Per Student Budget','School Size'])\n",
     "school_spending_df"
    ]
   },
@@ -2187,7 +2053,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 548,
+   "execution_count": 632,
    "metadata": {
     "scrolled": true
    },
@@ -2219,6 +2085,15 @@
        "      <th>% Passing Reading</th>\n",
        "      <th>% Overall Passing</th>\n",
        "      <th>Spending Ranges (Per Student)</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>School Size</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
        "    </tr>\n",
        "  </thead>\n",
        "  <tbody>\n",
@@ -2255,22 +2130,25 @@
       ],
       "text/plain": [
        "                   Average Math Score  Average Reading Score  % Passing Math  \\\n",
+       "School Size                                                                    \n",
        "Small(<1000)                83.839917              84.044699       94.594595   \n",
        "Medium(1000-2000)           83.682222              83.975780       94.133477   \n",
        "Large(2001-5000)            83.274201              83.989488       93.867718   \n",
        "\n",
        "                   % Passing Reading  % Overall Passing  \\\n",
+       "School Size                                               \n",
        "Small(<1000)               96.252927          90.540541   \n",
        "Medium(1000-2000)          97.308869          91.334769   \n",
        "Large(2001-5000)           96.539641          90.582567   \n",
        "\n",
        "                  Spending Ranges (Per Student)  \n",
+       "School Size                                      \n",
        "Small(<1000)                           $585-629  \n",
        "Medium(1000-2000)                      $630-644  \n",
        "Large(2001-5000)                       $645-675  "
       ]
      },
-     "execution_count": 548,
+     "execution_count": 632,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2281,10 +2159,13 @@
     "bins = [0, 999, 2000, 5000]\n",
     "group_names = ['Small(<1000)','Medium(1000-2000)','Large(2001-5000)']\n",
     "table_sum_df['School Size']=pd.cut(table_sum_df['Total Students'], bins, labels=group_names)\n",
+    "\n",
+    "#Grouping by School Size\n",
     "school_size_df = table_sum_df.groupby('School Size')\n",
     "school_size_df = school_size_df.max()\n",
+    "\n",
+    "#Dropping unwanted columns \n",
     "school_size_df = school_size_df.drop(columns=['School Type','Total Students', 'Total School Budget','Per Student Budget'])\n",
-    "school_size_df.index.name = None \n",
     "school_size_df"
    ]
   },
@@ -2304,7 +2185,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 569,
+   "execution_count": 631,
    "metadata": {},
    "outputs": [
     {
@@ -2376,15 +2257,16 @@
        "District             80.799062          53.672208  "
       ]
      },
-     "execution_count": 569,
+     "execution_count": 631,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "#Setting up Bins & Group Names for School Size  \n",
-    "#Drop the columns you don't need \n",
+    "#Grouping by School Type\n",
     "table_sum_type_df = table_sum_df.groupby(\"School Type\")\n",
+    "\n",
+    "#Finding the Average for the for all the columns \n",
     "table_sum_type= table_sum_type_df[[\"Average Math Score\"]].mean()\n",
     "table_sum_type[\"Average Reading Score\"]= table_sum_type_df[[\"Average Reading Score\"]].mean()\n",
     "table_sum_type[\"% Passing Math\"]= table_sum_type_df[['% Passing Math']].mean()\n",
@@ -2394,11 +2276,23 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Observable Trends"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "## \n",
+    "1. After careful consideration I noticed that Charter Schools perform much better than District Schools in every topic.\n",
+    "The top schools that have the highest Overall Passing are all charter school relative in comparison to the lowest Overal\n",
+    "Passing where they are all District Schools."
+   ]
   }
  ],
  "metadata": {
